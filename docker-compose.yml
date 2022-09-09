@@ -1,0 +1,15 @@
+version: "3.4"
+
+networks:
+  vue_app:
+
+services:
+  vue:
+    # build:
+    #   context: "vue/"
+    container_name: justineroncales_inventory_vue_app
+    image: vue-app
+    networks: 
+      - vue_app
+    ports:
+      - 8005:80 
