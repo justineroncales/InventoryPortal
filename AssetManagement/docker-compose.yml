@@ -1,0 +1,33 @@
+version: '3.4'
+networks:
+  assetsmanagementapp:
+
+services:
+  assetsdb:
+    container_name: asset-db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    #ports:
+    #  - 8006-1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=password@12345#
+    networks:
+      - assetsmanagementapp
+  assetsmanagement:
+    container_name: "assets-app" 
+    image: ${DOCKER_REGISTRY-}assetsmanagement
+    build:
+      context: .
+      dockerfile: AssetsManagement/Dockerfile
+    ports:
+      - 8001:80
+    depends_on:
+      - assetsdb
+    environment:
+      - DB_HOST=assetsdb
+      - DB_NAME=Asset
+      - DB_PASSWORD=password@12345#
+    networks:
+      - assetsmanagementapp
+
+
