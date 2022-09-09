@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceManagement", "InvoiceManagement.csproj", "{0C7D7C8E-A06D-4C54-916E-DD14955DEB20}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2CE25AC5-3CE3-4204-BADF-675290F02B05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C7D7C8E-A06D-4C54-916E-DD14955DEB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7D7C8E-A06D-4C54-916E-DD14955DEB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7D7C8E-A06D-4C54-916E-DD14955DEB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7D7C8E-A06D-4C54-916E-DD14955DEB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE25AC5-3CE3-4204-BADF-675290F02B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE25AC5-3CE3-4204-BADF-675290F02B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE25AC5-3CE3-4204-BADF-675290F02B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE25AC5-3CE3-4204-BADF-675290F02B05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F75E3CF-4C1A-4CB4-9078-6DBB3DDED858}
+	EndGlobalSection
+EndGlobal

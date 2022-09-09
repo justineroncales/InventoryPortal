@@ -1,0 +1,31 @@
+version: '3.4'
+networks:
+  invoicemanagementapp:
+
+services:
+  invoicedb:
+    container_name: invoicedb-db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    #ports:
+    #  - 8006-1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=password@12345#
+    networks:
+      - invoicemanagementapp
+  invoicemanagement:
+    container_name: "invoice-app" 
+    image: ${DOCKER_REGISTRY-}invoicemanagement
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8002:80
+    depends_on:
+      - invoicedb
+    environment:
+      - DB_HOST=invoicedb
+      - DB_NAME=Invoice
+      - DB_PASSWORD=password@12345#
+    networks:
+      - invoicemanagementapp
