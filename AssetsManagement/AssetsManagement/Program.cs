@@ -16,15 +16,26 @@ var database = configuration["DB_NAME"] ?? "Asset";
 
 // Add services to the container.
 
-//builder.Services.AddDbContext<DataContext>(options => {
-//        options.UseSqlServer($"Server={server}, {port};Initial Catalog={database};User ID={user};Password={password}");
-// });
-
-builder.Services.AddDbContext<DataContext>(options => {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("AssetSqlConnection"));
+builder.Services.AddDbContext<DataContext>(options =>
+{
+    options.UseSqlServer($"Server={server}, {port};Initial Catalog={database};User ID={user};Password={password}");
 });
+
+//builder.Services.AddDbContext<DataContext>(options =>
+//{
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("AssetSqlConnection"));
+//});
 builder.Services.AddScoped<IBusnessLayer, BusnessLayer>();
 builder.Services.AddControllers();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MyPolicy", builder =>
+    {
+        builder.WithOrigins("http://localhost:8005/", "http://localhost:8005/#/").AllowAnyMethod().AllowAnyHeader().SetIsOriginAllowed(origin => true) // allow any origin
+       .AllowCredentials().Build();
+    });
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -39,6 +50,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("MyPolicy");
 
 app.UseAuthorization();
 
