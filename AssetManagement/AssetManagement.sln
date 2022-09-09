@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetManagement", "AssetManagement\AssetManagement.csproj", "{C69BBDFA-FE12-4CBE-BAA4-43B180EE15A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetsManagement", "AssetManagement\AssetsManagement.csproj", "{C69BBDFA-FE12-4CBE-BAA4-43B180EE15A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
